@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 21 مايو 2023 الساعة 13:57
--- إصدار الخادم: 10.4.27-MariaDB
--- PHP Version: 8.0.25
+-- Generation Time: May 20, 2024 at 11:43 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `zetawiStore`
+-- Database: `Product`
 --
 
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `Cart`
+-- Table structure for table `Cart`
 --
 
 CREATE TABLE `Cart` (
@@ -38,10 +38,17 @@ CREATE TABLE `Cart` (
   `quantity` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `Cart`
+--
+
+INSERT INTO `Cart` (`cart_id`, `user_id`, `product_id`, `product_name`, `product_image`, `product_description`, `product_price`, `quantity`) VALUES
+(10, 20, 2, NULL, NULL, NULL, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `Order_Details`
+-- Table structure for table `Order_Details`
 --
 
 CREATE TABLE `Order_Details` (
@@ -53,17 +60,17 @@ CREATE TABLE `Order_Details` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- إرجاع أو استيراد بيانات الجدول `Order_Details`
+-- Dumping data for table `Order_Details`
 --
 
 INSERT INTO `Order_Details` (`id`, `user_id`, `order_date`, `total_amount`, `order_status`) VALUES
-(1, 1, '2023-05-09 12:00:00', '19.99', 'shipped'),
-(2, 2, '2023-05-08 15:30:00', '59.98', 'processing');
+(1, 1, '2023-05-09 12:00:00', 19.99, 'shipped'),
+(2, 2, '2023-05-08 15:30:00', 59.98, 'processing');
 
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `Order_Items`
+-- Table structure for table `Order_Items`
 --
 
 CREATE TABLE `Order_Items` (
@@ -75,18 +82,18 @@ CREATE TABLE `Order_Items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- إرجاع أو استيراد بيانات الجدول `Order_Items`
+-- Dumping data for table `Order_Items`
 --
 
 INSERT INTO `Order_Items` (`id`, `order_id`, `product_id`, `quantity`, `price`) VALUES
-(1, 1, 1, 1, '19.99'),
-(2, 2, 1, 2, '39.98'),
-(3, 2, 2, 1, '29.99');
+(1, 1, 1, 1, 19.99),
+(2, 2, 1, 2, 39.98),
+(3, 2, 2, 1, 29.99);
 
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `Payment_Details`
+-- Table structure for table `Payment_Details`
 --
 
 CREATE TABLE `Payment_Details` (
@@ -97,7 +104,7 @@ CREATE TABLE `Payment_Details` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- إرجاع أو استيراد بيانات الجدول `Payment_Details`
+-- Dumping data for table `Payment_Details`
 --
 
 INSERT INTO `Payment_Details` (`id`, `order_id`, `card_number`, `card_expiry`) VALUES
@@ -107,7 +114,7 @@ INSERT INTO `Payment_Details` (`id`, `order_id`, `card_number`, `card_expiry`) V
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `Product`
+-- Table structure for table `Product`
 --
 
 CREATE TABLE `Product` (
@@ -120,19 +127,19 @@ CREATE TABLE `Product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- إرجاع أو استيراد بيانات الجدول `Product`
+-- Dumping data for table `Product`
 --
 
 INSERT INTO `Product` (`id`, `name`, `description`, `price`, `image_url`, `upload_date`) VALUES
-(1, 'Product 1', 'Description for Product 1', '19.99', 'img1.jpg', '0000-00-00'),
-(2, 'Product 2', 'Description for Product 2', '29.99', 'img2.jpg', '0000-00-00'),
-(7, 'Product D', 'Description for Product D', '12.99', '14.jpg', '2023-05-11'),
-(33, 'dfgh', 'dfghnm,', '6.00', '20230516110527-ayman.jpg', '2023-05-16');
+(1, 'Product 1', 'Description for Product 1', 19.99, 'img1.jpg', '0000-00-00'),
+(2, 'Product 2', 'Description for Product 2', 29.99, 'img2.jpg', '0000-00-00'),
+(7, 'Product D', 'Description for Product D', 12.99, '14.jpg', '2023-05-11'),
+(33,'Product D','Description for Product D', 6.00, '14.jpg', '2023-05-16');
 
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `Product_Category`
+-- Table structure for table `Product_Category`
 --
 
 CREATE TABLE `Product_Category` (
@@ -142,7 +149,7 @@ CREATE TABLE `Product_Category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- إرجاع أو استيراد بيانات الجدول `Product_Category`
+-- Dumping data for table `Product_Category`
 --
 
 INSERT INTO `Product_Category` (`id`, `product_id`, `category_name`) VALUES
@@ -152,7 +159,7 @@ INSERT INTO `Product_Category` (`id`, `product_id`, `category_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `Product_Inventory`
+-- Table structure for table `Product_Inventory`
 --
 
 CREATE TABLE `Product_Inventory` (
@@ -162,7 +169,7 @@ CREATE TABLE `Product_Inventory` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- إرجاع أو استيراد بيانات الجدول `Product_Inventory`
+-- Dumping data for table `Product_Inventory`
 --
 
 INSERT INTO `Product_Inventory` (`id`, `product_id`, `quantity`) VALUES
@@ -172,7 +179,7 @@ INSERT INTO `Product_Inventory` (`id`, `product_id`, `quantity`) VALUES
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `User`
+-- Table structure for table `User`
 --
 
 CREATE TABLE `User` (
@@ -185,7 +192,7 @@ CREATE TABLE `User` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- إرجاع أو استيراد بيانات الجدول `User`
+-- Dumping data for table `User`
 --
 
 INSERT INTO `User` (`id`, `username`, `email`, `password`, `isadmin`, `user_imag`) VALUES
@@ -193,12 +200,13 @@ INSERT INTO `User` (`id`, `username`, `email`, `password`, `isadmin`, `user_imag
 (2, 'ayman ', 'ayman@gmail.com', 'Ss123456@', 0, 'ayman.jpg'),
 (17, 'sara', 'sara@gmail.com', 'Ss123456@', 0, 'user.png'),
 (18, 'sladfja', 'dfjkadsfadf@gmsf.kfgj', '$2y$10$3DbrJsDM3WNuZ/svMUk0Ze8C6DAs4ldImtJUs8Oq9Jp75naaj2dcS', 0, 'user.png'),
-(19, 'saleh', 'salehz@gmail.com', '$2y$10$n4FHlLGjIGC4JMHWf/JTmeaI8KWCxUQAIVOy.PmrsWogGFU7luRim', 1, 'user.png');
+(19, 'saleh', 'salehz@gmail.com', '$2y$10$n4FHlLGjIGC4JMHWf/JTmeaI8KWCxUQAIVOy.PmrsWogGFU7luRim', 1, 'user.png'),
+(20, 'mahdi', 'penitent85@gmail.com', '$2y$10$NQAhrNwtf7MAbQ04W0TC5.mw12cIp.RL3VMYTlwOCnnUxvvfbtrM2', 0, 'user.png');
 
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `User_Address`
+-- Table structure for table `User_Address`
 --
 
 CREATE TABLE `User_Address` (
@@ -212,7 +220,7 @@ CREATE TABLE `User_Address` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- إرجاع أو استيراد بيانات الجدول `User_Address`
+-- Dumping data for table `User_Address`
 --
 
 INSERT INTO `User_Address` (`id`, `user_id`, `street_address`, `city`, `state`, `zip_code`, `phone`) VALUES
@@ -225,7 +233,7 @@ INSERT INTO `User_Address` (`id`, `user_id`, `street_address`, `city`, `state`, 
 -- --------------------------------------------------------
 
 --
--- بنية الجدول `User_Payment`
+-- Table structure for table `User_Payment`
 --
 
 CREATE TABLE `User_Payment` (
@@ -236,7 +244,7 @@ CREATE TABLE `User_Payment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- إرجاع أو استيراد بيانات الجدول `User_Payment`
+-- Dumping data for table `User_Payment`
 --
 
 INSERT INTO `User_Payment` (`id`, `user_id`, `card_number`, `card_expiry`) VALUES
@@ -325,7 +333,7 @@ ALTER TABLE `User_Payment`
 -- AUTO_INCREMENT for table `Cart`
 --
 ALTER TABLE `Cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `Order_Details`
@@ -367,7 +375,7 @@ ALTER TABLE `Product_Inventory`
 -- AUTO_INCREMENT for table `User`
 --
 ALTER TABLE `User`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `User_Address`
@@ -382,55 +390,55 @@ ALTER TABLE `User_Payment`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- قيود الجداول المحفوظة
+-- Constraints for dumped tables
 --
 
 --
--- القيود للجدول `Cart`
+-- Constraints for table `Cart`
 --
 ALTER TABLE `Cart`
   ADD CONSTRAINT `Cart_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `User` (`id`),
   ADD CONSTRAINT `Cart_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `Product` (`id`);
 
 --
--- القيود للجدول `Order_Details`
+-- Constraints for table `Order_Details`
 --
 ALTER TABLE `Order_Details`
   ADD CONSTRAINT `Order_Details_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `User` (`id`);
 
 --
--- القيود للجدول `Order_Items`
+-- Constraints for table `Order_Items`
 --
 ALTER TABLE `Order_Items`
   ADD CONSTRAINT `Order_Items_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `Order_Details` (`id`),
   ADD CONSTRAINT `Order_Items_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `Product` (`id`);
 
 --
--- القيود للجدول `Payment_Details`
+-- Constraints for table `Payment_Details`
 --
 ALTER TABLE `Payment_Details`
   ADD CONSTRAINT `Payment_Details_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `Order_Details` (`id`);
 
 --
--- القيود للجدول `Product_Category`
+-- Constraints for table `Product_Category`
 --
 ALTER TABLE `Product_Category`
   ADD CONSTRAINT `Product_Category_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `Product` (`id`);
 
 --
--- القيود للجدول `Product_Inventory`
+-- Constraints for table `Product_Inventory`
 --
 ALTER TABLE `Product_Inventory`
   ADD CONSTRAINT `Product_Inventory_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `Product` (`id`);
 
 --
--- القيود للجدول `User_Address`
+-- Constraints for table `User_Address`
 --
 ALTER TABLE `User_Address`
   ADD CONSTRAINT `User_Address_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `User` (`id`);
 
 --
--- القيود للجدول `User_Payment`
+-- Constraints for table `User_Payment`
 --
 ALTER TABLE `User_Payment`
   ADD CONSTRAINT `User_Payment_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `User` (`id`);
