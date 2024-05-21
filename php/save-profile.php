@@ -10,6 +10,7 @@ $userName = $_POST['userName'];
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $userEmail = htmlentities(mysqli_real_escape_string($_POST['userEmail']));
     echo"<script>alert($userName)</script>";
+    echo $userName;
 }
 
 

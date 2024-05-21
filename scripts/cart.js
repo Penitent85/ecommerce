@@ -1,8 +1,8 @@
-function deleteItem(cartID) {
-    $(".cart-container").load('../php/cart-load.php', {
-        cartID: cartID,
-    });
-}
+// function deleteItem(cartID) {
+//     $(".cart-container").load('../php/cart-load.php', {
+//         cartID: cartID,
+//     });
+// }
 
 function viewProfile() {
     var ID = getCookie('userID');

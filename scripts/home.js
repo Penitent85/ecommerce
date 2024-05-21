@@ -23,8 +23,8 @@ function show() {
 }
 
 function logout() {
-    document.cookie = "userID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/webproj;";
-    window.open("home.php", "_self");
+    document.cookie = "userID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/ecommerce;";
+    window.open("index.php", "_self");
 }
 
 function viewProfile() {
@@ -66,7 +66,7 @@ function search() {
     var searchKeyword = document.getElementById("searchInput").value;
 
     if (searchKeyword != "") {
-        var url = "../webproj/product-list.php?search_keyword=" + searchKeyword;
+        var url = "../ecommerce/product-list.php?search_keyword=" + searchKeyword;
         window.open(url, "_self");
     }
 }

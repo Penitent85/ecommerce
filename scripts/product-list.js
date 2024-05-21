@@ -2,7 +2,7 @@ function search() {
     var searchKeyword = document.getElementById("searchInput").value;
 
     if (searchKeyword != "") {
-        var url = "../webproj/product-list.php?search_keyword=" + searchKeyword;
+        var url = "../ecommerce/product-list.php?search_keyword=" + searchKeyword;
         window.open(url, "_self");
     }
 }

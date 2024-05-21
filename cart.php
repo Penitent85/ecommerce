@@ -39,7 +39,7 @@ $cartItemsCount = mysqli_num_rows($rungetCartQuery);
         <div class="header-container">
             <div class="header">
                 <div class="left-side">
-                    <h1 onclick="location.href='home.php'">zetawi store</h1>
+                    <h1 onclick="location.href='index.php'">Golden store</h1>
                 </div>
                 <div class="center-menu">
 

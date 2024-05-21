@@ -1,9 +1,13 @@
+
 function placeOrder(productID, productName) {
+    console.log(userName);
     var userName = document.getElementById("userName").value;
     var userAddress = document.getElementById("userAddress").value;
     var userPhone = document.getElementById("userPhone").value;
 
-    $("#loadOrderProcess").load('../webproj/php/place-order.php', {
+
+
+    $("#loadOrderProcess").load('./php/place-order.php', {
         productID: productID,
         productName: productName,
         userName: userName,
