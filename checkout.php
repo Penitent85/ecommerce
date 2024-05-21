@@ -125,7 +125,7 @@ $rowUserAddress = mysqli_fetch_array($runUserAddress);
                     <p class='ftotal'> Total Price </p>
                     <?php echo"<p class='right ftotal'> USD $productPrice</p>";?>
                 </div>
-                <?php echo"<button type='button' id='confirmBtn' onClick='placeOrder($productID ,\"$productName\")'> Confirm
+                <?php echo"<button type='button' id='confirmBtn' onclick='placeOrder($productID ,\"$productName\")'> Confirm
                     Order</button>"?>
                 <div id="loadOrderProcess"></div>
             </div>

@@ -81,7 +81,7 @@ if(isset($userID))
             <?php echo"<p>$productDes</p>"?>
             <div class="buttons">
                 <?php echo"<button id='buy_btn' class='buy' onclick=location.href='checkout.php?product_id=$productID'>Buy</button>"?>
-                <?php echo"<button id='adcart_btn' class='adcart' onClick='addToCart($productID ,\"$productName\")'>Add to Cart</button>"?>
+                <?php echo"<button id='adcart_btn' class='adcart' onclick='addToCart($productID ,\"$productName\")'>Add to Cart</button>"?>
             </div>
             <div id="cartSucess"></div>
         </div>

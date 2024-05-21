@@ -5,17 +5,14 @@ include  "include/connection.php";
 
 $userID = $_COOKIE['userID'];
 
-if(isset($userID))
-{
+if (isset($userID)) {
     $getUser = "select * from User where id='$userID'";
     $runUser = mysqli_query($conn, $getUser);
     $row = mysqli_fetch_array($runUser);
     $userName = $row['username'];
     $userImage = $row['user_imag'];
-}
-else
-{
-    echo"<script>window.open('home.php', '_self')</script>";
+} else {
+    echo "<script>window.open('home.php', '_self')</script>";
 }
 
 //geting cart data
@@ -33,8 +30,7 @@ $cartItemsCount = mysqli_num_rows($rungetCartQuery);
     <title>zetawi store | Cart</title>
     <link rel="stylesheet" href="styles/cart.css">
     <link rel="stylesheet" href="styles/basic.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -51,18 +47,16 @@ $cartItemsCount = mysqli_num_rows($rungetCartQuery);
                 </div>
                 <div class="right-side">
                     <?php
-                        if(isset($userID))
-                        {
-                            if(empty($userImage)){
-                                echo"<img id='dp' src='images/user.png' alt='' onclick='viewProfile()'>";
-                            } else{
-                                echo"<img id='dp' src='storage/users/$userImage' alt=''style='border-radius: 50px;' onclick='viewProfile()'/>";
-                            }
+                    if (isset($userID)) {
+                        if (empty($userImage)) {
+                            echo "<img id='dp' src='images/user.png' alt='' onclick='viewProfile()'>";
+                        } else {
+                            echo "<img id='dp' src='storage/users/$userImage' alt=''style='border-radius: 50px;' onclick='viewProfile()'/>";
                         }
-                        else {
-                            echo"<img id='dp' src='images/user.png' alt='' onclick='viewProfile()'>";
-                        }
-                        ?>
+                    } else {
+                        echo "<img id='dp' src='images/user.png' alt='' onclick='viewProfile()'>";
+                    }
+                    ?>
                 </div>
             </div>
         </div>
@@ -73,14 +67,13 @@ $cartItemsCount = mysqli_num_rows($rungetCartQuery);
         <div class='cart-container'>
 
             <?php
-            if($cartItemsCount > 0) {
-            echo"
+            if ($cartItemsCount > 0) {
+                echo "
             <div class='product-container'>
                 <h1 id='title'> Cart</h1>";
 
 
-                while($rowCart = mysqli_fetch_array($rungetCartQuery))
-                {
+                while ($rowCart = mysqli_fetch_array($rungetCartQuery)) {
                     $productID = $rowCart['product_id'];
                     $cartID = $rowCart['cart_id'];
 
@@ -92,19 +85,19 @@ $cartItemsCount = mysqli_num_rows($rungetCartQuery);
                     $productDes = $rowProduct['description'];
                     $productPrice = $rowProduct['price'];
 
-                    $totalPrice = (double)$productPrice ;
-
-                    echo"
+                    $totalPrice = (float)$productPrice;
+                    //delete 
+                    echo "
                     <div class='product'>
                         <div class='main' onclick=location.href='checkout.php?product_id=$productID'>
                             <img src='images/$productImage' alt=''>
                             <h1>$productName</h1>
                             <h2>Rs $productPrice</h2>
                         </div>
-                        <img class='delete' src='images/delete.png' alt='' onClick='deleteItem($cartID)'>
+                        <img class='delete' src='images/delete.png' alt='' onclick='deleteItem($cartID)'>
                     </div>";
                 }
-            echo"
+                echo "
             </div>
         
             <div class='cart-summary'>
@@ -119,10 +112,10 @@ $cartItemsCount = mysqli_num_rows($rungetCartQuery);
                 </div>
             </div> ";
             } else {
-                echo"
+                echo "
                 <p id='noItemsInCartLabel'> No Items in the Cart.</p>
             ";
-            }?>
+            } ?>
         </div>
 
         <!--########## End of Cart Container ##########-->

@@ -31,7 +31,7 @@ if (isset($userID) && isset($cartID)) {
             $productDes = $rowProduct['description'];
             $productPrice = $rowProduct['price'];
 
-            $totalPrice = (double)$productPrice + $totalPrice;
+            $totalPrice = (float)$productPrice + $totalPrice;
 
             echo "
             <div class='product'>
@@ -40,7 +40,7 @@ if (isset($userID) && isset($cartID)) {
                     <h1>$productName</h1>
                     <h2>Rs $productPrice</h2>
                 </div>
-                <img class='delete' src='images/delete.png' alt='' onClick='deleteItem($cartID)'>
+                <img class='delete' src='images/delete.png' alt='' ='deleteItem($cartID)'>
             </div>";
         }
         echo "

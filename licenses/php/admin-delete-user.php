@@ -29,7 +29,7 @@ $userID = $_POST['userID'];
                     <p>  $userName </p>
                     <p>  $userEmail </p>
                 </div>
-            <img class='delete' src='../images/delete.png' alt='' onClick='deleteUser($userID)' title='Delete';>
+            <img class='delete' src='../images/delete.png' alt='' onclick='deleteUser($userID)' title='Delete';>
             </div>";
         }
     }

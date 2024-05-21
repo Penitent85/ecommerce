@@ -133,7 +133,7 @@ if(isset($_POST['userName']))
                     <?php echo"<input id='userPhone' type='text' name='userPhone' value='$userPhone' placeholder='Enter your phone number'>"?>
                 </div>
             </form>
-            <button id='saveBtn' onClick='editProfileDataValidation()'> Save </button>
+            <button id='saveBtn' onclick='editProfileDataValidation()'> Save </button>
             <div id="saveProfileLoader"></div>
 
         </div>

@@ -71,9 +71,9 @@ if (!$runOrdersQuery) {
                 </div>
             </div>
             <div class='controller'>
-                <button class='controller-btns' onClick='manageOrder(\"processing\", $orderID)'>Accept</button>
-                <button class='controller-btns' onClick='manageOrder(\"shipped\", $orderID)'>Shipped</button>
-                <button class='controller-btns' onClick='manageOrder(\"rejected\", $orderID)'>Reject</button>
+                <button class='controller-btns' onclick='manageOrder(\"processing\", $orderID)'>Accept</button>
+                <button class='controller-btns' onclick='manageOrder(\"shipped\", $orderID)'>Shipped</button>
+                <button class='controller-btns' onclick='manageOrder(\"rejected\", $orderID)'>Reject</button>
             </div>
         </div>
     ";

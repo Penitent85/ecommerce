@@ -98,7 +98,7 @@ unset($_POST['submit']);
                                 <img src='../images/$productImage' alt=''>
                                 <h2>$productName</h1>
                             </div>
-                            <img class='delete' src='../images/delete.png' alt='' onClick='deleteItem($productID)' title='Delete';>
+                            <img class='delete' src='../images/delete.png' alt='' onclick='deleteItem($productID)' title='Delete';>
                         </div>
                         ";
                     }
