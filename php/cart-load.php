@@ -2,6 +2,7 @@
 <?php
 include  "../include/connection.php";
 
+
 $userID = $_COOKIE['userID'];
 $cartID = $_POST['cartID'];
 
@@ -35,12 +36,12 @@ if (isset($userID) && isset($cartID)) {
 
             echo "
             <div class='product'>
-                <div class='main' onclick=location.href='checkout.php?product_id=$productID'>
+                <div class='main' onclick=window.location.href='checkout.php?product_id=$productID'>
                     <img src='../images/$productImage' alt=''>
                     <h1>$productName</h1>
                     <h2>Rs $productPrice</h2>
                 </div>
-                <img class='delete' src='images/delete.png' alt='' ='deleteItem($cartID)'>
+                <img class='delete' src='images/delete.png' alt='' onclick='deleteItem($cartID)'>
             </div>";
         }
         echo "
@@ -64,7 +65,7 @@ if (isset($userID) && isset($cartID)) {
     }
 } else {
     echo "<script>
-    window.open('../home.php', '_self')
+    window.open('../index.php', '_self')
     </script>";
 }
 ?>

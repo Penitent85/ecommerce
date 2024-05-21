@@ -4,21 +4,24 @@ include  "include/connection.php";
 
 
 $userID = $_COOKIE['userID'];
-
+echo  $userID;
 if(isset($userID))
 {
-    $getUser = "select * from User where id='$userID'";
+    $getUser = "select * from User where id=$userID";
+
     $runUser = mysqli_query($conn, $getUser);
     $row = mysqli_fetch_array($runUser);
     $userName = $row['username'];
     $userEmail = $row['email'];
     $userImage = $row['user_imag'];
 
+//    var_dump($row);
 
     $getUserAddress = "select * from User_Address where id='$userID'";
     $runUserAddress = mysqli_query($conn, $getUserAddress);
     $rowAddress = mysqli_fetch_array($runUserAddress);
     $userAddress = $rowAddress["city"].",".$rowAddress['street_address'].",".$rowAddress["state"].",".$rowAddress["zip_code"];
+    echo $userAddress;
     $userPhone = $rowAddress['phone'];
 }
 else
@@ -29,11 +32,13 @@ else
 
 if(isset($_POST['userName']))
 {
+    echo 'sdsd2';
     $userImage = $_FILES['userImage']['name'];
     $userImageTemp = $_FILES['userImage']['tmp_name'];
     $userName = htmlentities(mysqli_real_escape_string($conn, $_POST['userName']));
     $userEmail = htmlentities(mysqli_real_escape_string($conn, $_POST['userEmail']));
     $userAddress = htmlentities(mysqli_real_escape_string($conn, $_POST['userAddress']));
+    echo 'sdsd';
     $userPhone = htmlentities(mysqli_real_escape_string($conn, $_POST['userPhone']));
 
     $randomName = date("YmdHis");
@@ -53,13 +58,14 @@ if(isset($_POST['userName']))
 
     }
     else {
+
         $updateUserDataQuery = "update User set email='$userEmail', username='$userName' where id= '$userID'";
         $runinsertUserDataQuery = mysqli_query($conn, $updateUserDataQuery);
     }
 
+
     echo"<script>window.open('profile.php', '_self')</script>";
 }
-
 
 ?>
 <html lang="en">
@@ -127,10 +133,10 @@ if(isset($_POST['userName']))
                 </div>
 
                 <div class='section section-three'>
-                    <h1> Address </h1>
-                    <?php echo"<input id='userAddress' type='address' name='userAddress' value='$userAddress' placeholder='Enter your address'>"?>
+                    <h1> Address zzzzzzzzz </h1>
+                    <?php echo"<input id='userAddress' type='text' name='userAddress' value='$userAddress' placeholder='Enter your address'>"?>
                     <h1> Phone </h1>
-                    <?php echo"<input id='userPhone' type='text' name='userPhone' value='$userPhone' placeholder='Enter your phone number'>"?>
+                    <?php echo"<input id='userPhone' type='text' name='userPhone' value='0$userPhone' placeholder='Enter your phone number'>"?>
                 </div>
             </form>
             <button id='saveBtn' onclick='editProfileDataValidation()'> Save </button>

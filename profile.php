@@ -29,7 +29,7 @@ JOIN Order_Details ON Order_Items.order_id = Order_Details.id
     $runOrdersQuery = mysqli_query($conn, $getOrdersQuery);
     $ordersCount = mysqli_num_rows($runOrdersQuery);
 } else {
-    echo "<script>window.open('home.php', '_self')</script>";
+    echo "<script>window.open('index.php', '_self')</script>";
 }
 
 
@@ -53,7 +53,7 @@ JOIN Order_Details ON Order_Items.order_id = Order_Details.id
         <div class="header-container">
             <div class="header">
                 <div class="left-side">
-                    <h1 onclick="location.href='home.php'">zetawi store</h1>
+                    <h1 onclick="location.href='index.php'">Golden store</h1>
                 </div>
                 <div class="center-menu">
 

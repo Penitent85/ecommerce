@@ -28,7 +28,7 @@ if(isset($_POST['login_btn'])) {
                 if ($isAdmin){
                     echo"<script>window.open('admin/dashboard.php', '_self')</script>";
                 } else {
-                    echo "<script>window.open('home.php', '_self')</script>";
+                    echo "<script>window.open('index.php', '_self')</script>";
                 }
             } else {
                 $_SESSION["error"] = "Wrong email or password.";
@@ -59,7 +59,7 @@ if(isset($_POST['login_btn'])) {
         <div class="header">
             <div class="header-container">
                 <div class="left-side">
-                    <h1><a href="home.php">zetawi store</a></h1>
+                    <h1><a href="index.php">Golden store</a></h1>
                 </div>
                 <div class="right-side">
                     <a href="signup.php">SignUp</a>

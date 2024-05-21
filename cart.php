@@ -12,7 +12,7 @@ if (isset($userID)) {
     $userName = $row['username'];
     $userImage = $row['user_imag'];
 } else {
-    echo "<script>window.open('home.php', '_self')</script>";
+    echo "<script>window.open('index.php', '_self')</script>";
 }
 
 //geting cart data
@@ -23,7 +23,6 @@ $cartItemsCount = mysqli_num_rows($rungetCartQuery);
 ?>
 
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -69,10 +68,10 @@ $cartItemsCount = mysqli_num_rows($rungetCartQuery);
             <?php
             if ($cartItemsCount > 0) {
                 echo "
-            <div class='product-container'>
-                <h1 id='title'> Cart</h1>";
+            <div class='product-container'>       
+                <h1 id='title'> Cart</h1>";  //cart here
 
-
+                    // WHILE CART
                 while ($rowCart = mysqli_fetch_array($rungetCartQuery)) {
                     $productID = $rowCart['product_id'];
                     $cartID = $rowCart['cart_id'];
@@ -85,18 +84,19 @@ $cartItemsCount = mysqli_num_rows($rungetCartQuery);
                     $productDes = $rowProduct['description'];
                     $productPrice = $rowProduct['price'];
 
-                    $totalPrice = (float)$productPrice;
+                    $totalPrice += (float)$productPrice;
                     //delete 
                     echo "
                     <div class='product'>
                         <div class='main' onclick=location.href='checkout.php?product_id=$productID'>
                             <img src='images/$productImage' alt=''>
                             <h1>$productName</h1>
-                            <h2>Rs $productPrice</h2>
+                            <h2>ILS $productPrice</h2>
                         </div>
                         <img class='delete' src='images/delete.png' alt='' onclick='deleteItem($cartID)'>
                     </div>";
                 }
+                // end while cart
                 echo "
             </div>
         
@@ -104,11 +104,11 @@ $cartItemsCount = mysqli_num_rows($rungetCartQuery);
                 <h1>Summary</h1>
                 <div>
                     <p class='left'>Sub Total</p> 
-                    <p>Rs. $totalPrice </p>
+                    <p>ILS. $totalPrice </p>
                     <p class='left'>Shipping Fee</p>
                     <p>0</p>
                     <p class='left total'>Total</p>
-                    <p class='total'>Rs. $totalPrice </p>
+                    <p class='total'>ILS. $totalPrice </p>
                 </div>
             </div> ";
             } else {

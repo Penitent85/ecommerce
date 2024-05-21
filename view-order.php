@@ -7,7 +7,7 @@ $userID = $_COOKIE['userID'];
 
 if(!isset($orderID) || !isset($userID))
 {
-    echo"<script>window.open('home.php', '_self')</script>";
+    echo"<script>window.open('index.php', '_self')</script>";
 }
 
 if(isset($userID))

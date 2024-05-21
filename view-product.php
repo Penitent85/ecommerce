@@ -7,7 +7,7 @@ include  "include/connection.php";
 $productID = $_GET["product_id"];
 if(!isset($productID))
 {
-    echo"<script>window.open('home.php', '_self')</script>";
+    echo"<script>window.open('index.php', '_self')</script>";
 }
 
 //geting product data
@@ -50,7 +50,7 @@ if(isset($userID))
         <div class="header">
             <div class="left-side">
 
-                <img src="images/logo.png" id="logo1" style="width: 170px;" onclick="location.href='home.php'">
+                <img src="images/logo.png" id="logo1" style="width: 170px;" onclick="location.href='index.php'">
 
             </div>
             <div class="center-menu">

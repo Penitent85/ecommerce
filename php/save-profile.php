@@ -23,7 +23,7 @@ if(isset($userEmail) && isset($userID))
 }
 else
 {
-    //echo"<script>window.open('../home.php', '_self')</script>";
+    //echo"<script>window.open('../index.php', '_self')</script>";
 }
 
 ?>

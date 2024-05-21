@@ -5,7 +5,7 @@ include  "include/connection.php";
 $productID = $_GET["product_id"];
 if(!isset($productID))
 {
-    echo"<script>window.open('home.php', '_self')</script>";
+    echo"<script>window.open('index.php', '_self')</script>";
 }
 
 //getting product data
@@ -55,7 +55,7 @@ $rowUserAddress = mysqli_fetch_array($runUserAddress);
         <div class="header-container">
             <div class="header">
                 <div class="left-side">
-                    <h1 onclick="location.href='home.php'">zetawi store</h1>
+                    <h1 onclick="location.href='index.php'">Golden store</h1>
                 </div>
                 <div class="center-menu">
 
@@ -80,12 +80,12 @@ $rowUserAddress = mysqli_fetch_array($runUserAddress);
                 <div class='product-container' onclick=location.href='view-product.php?product_id=$productID'>
                     <img src='images/$productImage'>
                     <p id='name'> $productName </p>
-                    <p id='price'> Price: <span id='priceValue'>USD $productPrice</span> </p>
+                    <p id='price'> Price: <span id='priceValue'>ILS $productPrice</span> </p>
                 </div>
             "?>
             <div class='shipping-fee'>
                 <p>Shipping Fee</p>
-                <p id='value'>USD 0</p>
+                <p id='value'>ILS 0</p>
                 <p>Payment Method</p>
                 <p id='value'>Cash on Delivery</p>
             </div>
@@ -119,11 +119,11 @@ $rowUserAddress = mysqli_fetch_array($runUserAddress);
                 <h1> Total Price</h1>
                 <div class='table'>
                     <p> Product Price</p>
-                    <?php echo"<p class='right'> USD $productPrice</p>";?>
+                    <?php echo"<p class='right'> ILS $productPrice</p>";?>
                     <p> Shipping Fee</p>
-                    <p class='right'> USD 0</p>
+                    <p class='right'> ILS 0</p>
                     <p class='ftotal'> Total Price </p>
-                    <?php echo"<p class='right ftotal'> USD $productPrice</p>";?>
+                    <?php echo"<p class='right ftotal'> ILS $productPrice</p>";?>
                 </div>
                 <?php echo"<button type='button' id='confirmBtn' onclick='placeOrder($productID ,\"$productName\")'> Confirm
                     Order</button>"?>

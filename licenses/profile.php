@@ -40,7 +40,7 @@ JOIN Order_Details ON Order_Items.order_id = Order_Details.id
 
 }
 else {
-    echo"<script>window.open('home.php', '_self')</script>";
+    echo"<script>window.open('index.php', '_self')</script>";
 }
 
 
@@ -65,7 +65,7 @@ else {
     <div class="header-container">
         <div class="header">
             <div class="left-side">
-                <h1 onclick="location.href='home.php'">zetawi store</h1>
+                <h1 onclick="location.href='index.php'">zetawi store</h1>
             </div>
             <div class="center-menu">
 

@@ -7,6 +7,7 @@ function clickFileBtn() {
     document.getElementById('userImage').click()
 }
 
+// start editProfileDataValidation
 function editProfileDataValidation(userID) {
 
     var imageError = document.getElementById("imageError");
@@ -63,3 +64,4 @@ function editProfileDataValidation(userID) {
         document.getElementById("editProfileForm").submit();
     }
 }
+// end editProfileDataValidation

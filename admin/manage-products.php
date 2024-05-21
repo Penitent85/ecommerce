@@ -53,7 +53,7 @@ unset($_POST['submit']);
 <body>
     <div class="container">
         <div class="side-bar">
-            <img src="../images/logo.png" onclick="location.href=`../home.php`">
+            <img src="../images/logo.png" onclick="location.href=`../index.php`">
             <ul>
                 <li onclick="location.href='dashboard.php'">Dashboard</li>
                 <li style="color:white; font-weight:600;">Manage Products</li>

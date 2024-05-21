@@ -34,7 +34,7 @@ $userID = $_POST['userID'];
     }
     else {
     echo"<script>
-        window.open('../home.php', '_self')
+        window.open('../index.php', '_self')
     </script>";
 
     }

@@ -32,7 +32,7 @@ if (!$runOrdersQuery) {
 <body>
 <div class="container">
     <div class="side-bar">
-        <img src="../images/logo.png" onclick="location.href=`../home.php`">
+        <img src="../images/logo.png" onclick="location.href=`../index.php`">
         <ul>
             <li onclick="location.href='dashboard.php'">Dashboard</li>
             <li onclick="location.href='manage-products.php'">Manage Products</li>

@@ -28,7 +28,7 @@ $runProduct = mysqli_query($conn, $getProduct);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Zetawi store | Home</title>
+    <title> Golden store | Home</title>
     <link rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="styles/basic.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -40,7 +40,7 @@ $runProduct = mysqli_query($conn, $getProduct);
         <div class="header-container">
             <div class="header">
                 <div class="left-side">
-                    <h1 onclick="location.href='home.php'">Zetawi store</h1>
+                    <h1 onclick="location.href='home.php'">Golden store</h1>
                 </div>
                 <div class="center-menu">
 
@@ -138,3 +138,6 @@ $runProduct = mysqli_query($conn, $getProduct);
 <script src="scripts/home.js"></script>
 
 </html>
+
+
+<!--Golden -->

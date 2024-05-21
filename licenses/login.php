@@ -38,7 +38,7 @@ if(isset($_POST['login_btn'])) {
                 if ($isAdmin){
                     echo"<script>window.open('admin/dashboard.php', '_self')</script>";
                 } else {
-                    echo "<script>window.open('home.php', '_self')</script>";
+                    echo "<script>window.open('index.php', '_self')</script>";
                 }
             } else {
                 $_SESSION["error"] = "Wrong email or password.";

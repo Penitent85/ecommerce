@@ -54,7 +54,7 @@ if(isset($_POST['signup_btn'])){
         <div class="header">
             <div class="header-container">
                 <div class="left-side">
-                    <h1><a href="home.php">zetawi store</a></h1>
+                    <h1><a href="index.php">Golden store</a></h1>
                 </div>
                 <div class="right-side">
                     <a href="login.php">Login</a>

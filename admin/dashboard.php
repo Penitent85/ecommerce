@@ -39,7 +39,7 @@ $rungetOrder = mysqli_query($conn, $getOrderQuery);
 <body>
     <div class="container">
         <div class="side-bar">
-            <img src="../images/logo.png" onclick="location.href=`../home.php`">
+            <img src="../images/logo.png" onclick="location.href=`../index.php`">
             <ul>
                 <li style="color:white; font-weight:600;">Dashboard</li>
                 <li onclick="location.href='manage-products.php'">Manage Products</li>
